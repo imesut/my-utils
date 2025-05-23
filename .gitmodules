@@ -1,0 +1,3 @@
+[submodule "static/xcstrings-to-table-webapp"]
+	path = static/xcstrings-to-table-webapp
+	url = https://github.com/imesut/xcstrings-to-table-webapp
