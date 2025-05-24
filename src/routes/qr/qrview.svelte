@@ -39,7 +39,7 @@
   });
 
   $: {
-    if(value && padding && format && errorCorrection && QRcode) {
+    if(value && ((padding === 0) ? true : padding) && format && errorCorrection && QRcode) {
       generateQrCode();
     }
   }
