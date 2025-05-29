@@ -33,4 +33,8 @@
 
 <h2 class="text-2xl">My Utils</h2>
 
-{@render contentGroup(content.scripts)}
+{@render contentGroup(content.utilities)}
+
+<h2 class="text-2xl">See Also</h2>
+
+<CardView title="My Scripts" description="My everyday-use scripts and libraries, which are good for local usage, instead of these web based utilities" icon="📜" url="https://github.com/imesut/my-scripts"></CardView>

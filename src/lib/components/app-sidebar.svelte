@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
-	import type { ContentItem } from '../../content';
 
 	type AppSideBarProps = {
 		currentPath: string;
@@ -90,6 +89,6 @@
 	<Sidebar.Content>
 		{@render menulist(content.other, '')}
 		{@render menulist(content.apps, 'Apps')}
-		{@render menulist(content.scripts, 'Utilities')}
+		{@render menulist(content.utilities, 'Utilities')}
 	</Sidebar.Content>
 </Sidebar.Root>

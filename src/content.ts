@@ -31,7 +31,7 @@ export let content = {
             url: "https://apps.apple.com/tr/app/glass-timer/id6477349833/",
         },
     ],
-    scripts: [
+    utilities: [
 
         {
             icon: "🔡",
@@ -47,8 +47,22 @@ export let content = {
             description: "A web app to parse Xcode's new string catalog formatted .xcstrings files, as a table.",
             url: "/xcstrings-to-table"
         },
+        {
+            icon: "kindleToNotion.jpeg",
+            iconType: "image",
+            title: "Kindle To Notion",
+            description: "A Toolset designed to transport Kindle Highlights into Notion",
+            url: "https://www.producthunt.com/products/kindle2notion"
+        },
+        {
+            icon: "🇿",
+            iconType: "emoji",
+            title: "Zendesk Help Center Article Exporter",
+            description: "By keeping category, section and articles hierarchy, uses Zendesk’s public api w/o any authentication	",
+            url: "https://github.com/imesut/zendesk-hc-exporter"
+        },
     ],
 
 }
 
-export let flattenedContentList = [...content.other, ...content.apps, ...content.scripts];
+export let flattenedContentList = [...content.other, ...content.apps, ...content.utilities];
