@@ -3,7 +3,19 @@
 	import { content } from '../content';
 </script>
 
-<h1 class="text-xl">Welcome to Mesut's Utils</h1>
+
+{#snippet contentGroup(list)}
+	<div class="flex flex-wrap gap-4">
+	{#each list as c}
+		{#if c.url !== '/'}
+			<CardView title={c.title} description={c.description} icon={c.icon} iconType={c.iconType} url={c.url}></CardView>
+		{/if}
+	{/each}
+</div>
+
+{/snippet}
+
+<h1 class="text-xl">Mesut's Utils</h1>
 <p>
 	This is my utility hub, where i host my browser based utilities. Here's a catalog of my utilities
 	so far.
@@ -15,10 +27,10 @@
     <a href="https://mesut.me" class="underline"> My Website</a>
 </p>
 
-<div class="flex flex-wrap gap-4">
-	{#each content as c}
-		{#if c.url !== '/'}
-			<CardView title={c.title} description={c.description} icon={c.icon} url={c.url}></CardView>
-		{/if}
-	{/each}
-</div>
+<h2 class="text-2xl">My Apps</h2>
+
+{@render contentGroup(content.apps)}
+
+<h2 class="text-2xl">My Utils</h2>
+
+{@render contentGroup(content.scripts)}

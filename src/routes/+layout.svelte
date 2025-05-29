@@ -3,7 +3,7 @@
 
 	import type { LayoutProps } from './$types';
 	import { page } from '$app/state';
-	import { content } from '../content';
+	import { flattenedContentList } from '../content';
 
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import { ModeWatcher } from 'mode-watcher';
@@ -14,7 +14,7 @@
 	let { children }: LayoutProps = $props();
 
 	let currentPath = $derived(page.url.pathname);
-	let currentTitle = $derived(content.filter((c) => c.url == currentPath)[0].title);
+	let currentTitle = $derived(flattenedContentList.filter((c) => c.url == currentPath)[0]?.title ?? "");
 </script>
 
 <svelte:head>

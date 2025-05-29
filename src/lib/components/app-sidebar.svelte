@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
+	import type { ContentItem } from '../../content';
 
 	type AppSideBarProps = {
 		currentPath: string;
@@ -19,6 +20,28 @@
 
 	import { content } from '../../content';
 </script>
+
+<!-- Svelte don't support ts type usage inside snippet. -->
+{#snippet menulist(list, title)}
+	<Sidebar.Group>
+		<Sidebar.GroupLabel>{title}</Sidebar.GroupLabel>
+		<Sidebar.GroupContent>
+			<Sidebar.Menu class="gap-2">
+				{#each list as item (item.title)}
+					<Sidebar.MenuItem>
+						<Sidebar.MenuButton isActive={restProps.currentPath == item.url}>
+							{#snippet child({ props })}
+								<a href={item.url} class="font-medium" {...props}>
+									{item.title}
+								</a>
+							{/snippet}
+						</Sidebar.MenuButton>
+					</Sidebar.MenuItem>
+				{/each}
+			</Sidebar.Menu>
+		</Sidebar.GroupContent>
+	</Sidebar.Group>
+{/snippet}
 
 <Sidebar.Root variant="floating" {...restProps}>
 	<Sidebar.Header>
@@ -65,20 +88,8 @@
 		</Sidebar.Menu>
 	</Sidebar.Header>
 	<Sidebar.Content>
-		<Sidebar.Group>
-			<Sidebar.Menu class="gap-2">
-				{#each content as item (item.title)}
-					<Sidebar.MenuItem>
-						<Sidebar.MenuButton isActive={restProps.currentPath == item.url}>
-							{#snippet child({ props })}
-								<a href={item.url} class="font-medium" {...props}>
-									{item.title}
-								</a>
-							{/snippet}
-						</Sidebar.MenuButton>
-					</Sidebar.MenuItem>
-				{/each}
-			</Sidebar.Menu>
-		</Sidebar.Group>
+		{@render menulist(content.other, '')}
+		{@render menulist(content.apps, 'Apps')}
+		{@render menulist(content.scripts, 'Utilities')}
 	</Sidebar.Content>
 </Sidebar.Root>
