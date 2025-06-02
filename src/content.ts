@@ -41,6 +41,13 @@ export let content = {
             url: "/qr"
         },
         {
+            icon: "📨",
+            iconType: "emoji",
+            title: ".Msg Reader",
+            description: "Read Outlook .msg files on your browser, which lets you read on Macs too. completeley local and privacy friendly.",
+            url: "/msg-reader"
+        },
+        {
             icon: "📚",
             iconType: "emoji",
             title: "Xcstrings to Table",
