@@ -57,14 +57,14 @@ export let content = {
         {
             icon: "kindleToNotion.jpeg",
             iconType: "image",
-            title: "Kindle To Notion",
+            title: "Kindle To Notion (External)",
             description: "A Toolset designed to transport Kindle Highlights into Notion",
             url: "https://www.producthunt.com/products/kindle2notion"
         },
         {
             icon: "🇿",
             iconType: "emoji",
-            title: "Zendesk Help Center Article Exporter",
+            title: "Zendesk H.C.A. Exporter (External)",
             description: "By keeping category, section and articles hierarchy, uses Zendesk’s public api w/o any authentication	",
             url: "https://github.com/imesut/zendesk-hc-exporter"
         },
